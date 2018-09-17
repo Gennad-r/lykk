@@ -1,0 +1,90 @@
+@import "_mixins/font-face";
+
+@include font-face("Icons", "../fonts/Icons/icomoon");
+@include font-face("Fira", "../fonts/FiraSansExtraCondensed-Regular/FiraSansExtraCondensed-Regular");
+@include font-face("Fira", "../fonts/FiraSansExtraCondensed-Medium/FiraSansExtraCondensed-Medium", 500);
+@include font-face("Fira", "../fonts/FiraSansExtraCondensed-Light/FiraSansExtraCondensed-Light", 300);
+@include font-face("Fira", "../fonts/FiraSansExtraCondensed-ExtraLight/FiraSansExtraCondensed-ExtraLight", 200);
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-set-01:before {
+  content: "\e900";
+}
+.icon-set-02:before {
+  content: "\e901";
+}
+.icon-set-03:before {
+  content: "\e902";
+}
+.icon-set-04:before {
+  content: "\e903";
+}
+.icon-set-05:before {
+  content: "\e904";
+}
+.icon-set-06:before {
+  content: "\e905";
+}
+.icon-about-01:before {
+  content: "\e906";
+}
+.icon-set-08:before {
+  content: "\e907";
+}
+.icon-set-09:before {
+  content: "\e908";
+}
+.icon-set-10:before {
+  content: "\e909";
+}
+.icon-set-11:before {
+  content: "\e90a";
+}
+.icon-set-12:before {
+  content: "\e90b";
+}
+.icon-set-13:before {
+  content: "\e90c";
+}
+.icon-set-14:before {
+  content: "\e90d";
+}
+.icon-set-15:before {
+  content: "\e90e";
+  color: #fff;
+}
+.icon-phone:before {
+  content: "\e90f";
+}
+.icon-insta:before {
+  content: "\e910";
+}
+.icon-skype:before {
+  content: "\e911";
+}
+.icon-fb:before {
+  content: "\e912";
+}
+.icon-find:before {
+  content: "\e913";
+}
+.icon-set-21:before {
+  content: "\e914";
+}
+.icon-set-22:before {
+  content: "\e915";
+}
