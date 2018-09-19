@@ -10,9 +10,10 @@
 	background-color: $accent;
 	color: #fff;
 }
-
-body {
+html{
 	font-size: 18px;
+}
+body {
 	min-width: 320px;
 	position: relative;
 	line-height: 1.65;
@@ -125,42 +126,45 @@ nav .has-submenu{
 }
 
 .prenav{
-  ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    li:last-child{
-    	a{
-	    	margin-right: 0;
-    	}
-    }
-  }
-  a{
-    color: #fff;
-    font-size: 0.8rem;
-    display: block;
-    padding: 15px 0;
-    margin-right: 20px;
-  }
-  &-right{
-  	li{
-  		&.has-submenu{
-			&:first-child{
-		  		a{
-  					margin-right: 10px;
-  				}
-  			}
-			&:last-child{
-		  		a{
-  					margin-left: 5px;
-  				}
-  			}
-  		}
-  	}
-  	a{
-  		margin-right: 5px;
-  	}
-  }
+	li{
+		flex: none;
+	}
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		li:last-child{
+			a{
+				margin-right: 0;
+			}
+		}
+	}
+	a{
+		color: #fff;
+		font-size: 0.8rem;
+		display: block;
+		padding: 15px 0;
+		margin-right: 20px;
+	}
+	&-right{
+		li{
+			&.has-submenu{
+				&:first-child{
+					a{
+						margin-right: 10px;
+					}
+				}
+				&:last-child{
+					a{
+						margin-left: 5px;
+					}
+				}
+			}
+		}
+		a{
+			margin-right: 5px;
+		}
+	}
 }
 
 .main-header-section{
@@ -250,5 +254,27 @@ section{
 		margin-bottom: 3rem;
 	}
 }
+.about-company{
+	&>div[class^="col"]{
+		margin-bottom: 15px;
+	}
+	&__plate{
+		padding: 10px;
+		border: 1px solid #eee;
+	}
+	&__icon-holder{
+		flex: 1 0 80px;
+		span{
+			font-size: 60px;
+			line-height: 1;
+			color: $accent;
+		}
+	}
+	&__card-text{
+		flex: 2 1 75%
+	}
+}
+
+
 
 @import "media"; // Always at the end
