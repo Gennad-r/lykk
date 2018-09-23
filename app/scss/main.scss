@@ -279,6 +279,7 @@ section{
 	}
 }
 .about-company{
+	color: $accent;
 	&>div[class^="col"]{
 		margin-bottom: 15px;
 	}
@@ -304,7 +305,7 @@ section{
 		}
 	}
 	&__card-text{
-		flex: 2 1 75%;
+		flex: 0 0 75%;
 	}
 }
 
