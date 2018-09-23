@@ -392,12 +392,12 @@ section{
 			transform: translateY(-50%);
 		}
 	}
-	&__description-text{
-		column-count: 2;
-		column-gap: 30px;
-		p{
-			break-inside: avoid;
-		}
+}
+.column-text{
+	column-count: 2;
+	column-gap: 30px;
+	p{
+		break-inside: avoid;
 	}
 }
 .solution:hover, .solution.active{
