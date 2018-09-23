@@ -18,6 +18,7 @@ body {
 	position: relative;
 	line-height: 1.65;
 	font-family: $default-font;
+	font-weight: 300;
 	overflow-x: hidden;
 	color: $text;
 	input, textarea {
@@ -41,8 +42,13 @@ body {
 	}
 }
 
-.text-center {
-	text-align: center;
+.text{
+	&-center {
+		text-align: center;
+	}
+	&-right {
+		text-align: right;
+	}
 }
 
 b, strong {
@@ -51,6 +57,21 @@ b, strong {
 
 .bg-primary{
 	background-color: $accent;
+}
+
+.btn{
+	display: inline-block;
+	outline: none;
+	background: none;
+	border: 1px solid $accent;
+	color: $accent;
+	cursor: pointer;
+	padding: 5px 50px;
+	transition: background-color 0.5s;
+	&:hover{
+		background-color: $accent;
+		color: #fff;
+	}
 }
 
 h1{
@@ -221,6 +242,7 @@ nav .has-submenu{
 	}
 }
 .search-form{
+	max-width: 170px;
 	position: relative;
 	&:before{
 		position: absolute;
@@ -261,6 +283,15 @@ section{
 	&__plate{
 		padding: 10px;
 		border: 1px solid #eee;
+		cursor: pointer;
+		transition: background-color 0.7s;
+		&:hover, &.active-plate{
+			background-color: $accent;
+			color: #fff;
+			.about-company__icon-holder span{
+				color: #fff;
+			}
+		}
 	}
 	&__icon-holder{
 		flex: 1 0 80px;
@@ -271,10 +302,114 @@ section{
 		}
 	}
 	&__card-text{
-		flex: 2 1 75%
+		flex: 2 1 75%;
 	}
 }
 
+//slider
+
+.owl-carousel .owl-stage-outer{
+	overflow: visible;
+	.owl-item{
+		opacity: 0.2;
+		&.active{
+			opacity: 1;
+		}
+	}
+}
+
+
+//production section
+
+.production-item{
+	display: block;
+	margin-bottom: 30px;
+	overflow: hidden;
+	&:hover{
+		img{
+			filter: grayscale(0);
+		}
+		.production-item__inner{
+			opacity: 0;
+			span{
+				transform: scale(3);
+				filter: blur(5px);
+			}
+		}
+	}
+	position: relative;
+	img{
+		filter: grayscale(90%)
+	}
+	&__inner{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: rgba(#fff, 0.7);
+		transition: opacity 0.9s;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 15px;
+		text-transform: uppercase;
+		font-size: 1.2rem;
+		text-align: center;
+		color: $accent;
+		span{
+			transition: transform 0.2s;
+			transform-origin: center;
+		}
+	}
+}
+
+// complex solutions
+
+.solution{
+	font-weight: 300;
+	line-height: 1.2;
+	color: $text;
+	text-align: center;
+	display: block;
+	&:hover{
+		text-decoration: none;
+	}
+	&__icon{
+		position: relative;
+		transition: 0.5s;
+		margin-bottom: 0.5rem;
+		color: $accent;
+		height: 0;
+		padding-bottom: 100%;
+		font-size: 60px;
+		span{
+			position: absolute;
+			display: block;
+			width: 100%;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+	&__description-text{
+		column-count: 2;
+		column-gap: 30px;
+		p{
+			break-inside: avoid;
+		}
+	}
+}
+.solution:hover, .solution.active{
+	.solution__icon{
+		color: #fff;
+		background-color: $accent;
+	}
+	.solution__text{
+		color: $text;
+		text-decoration: underline;
+	}
+}
 
 
 @import "media"; // Always at the end

@@ -10,6 +10,7 @@ var gulp          = require('gulp'),
 		rename        = require('gulp-rename'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require("gulp-notify"),
+		sourcemaps    = require('gulp-sourcemaps'),
 		rsync         = require('gulp-rsync');
 
 gulp.task('browser-sync', function() {
@@ -26,10 +27,12 @@ gulp.task('browser-sync', function() {
 
 gulp.task('styles', function() {
 	return gulp.src('app/'+syntax+'/**/*.'+syntax+'')
-	.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
-	.pipe(rename({ suffix: '.min', prefix : '' }))
-	.pipe(autoprefixer(['last 15 versions']))
-	.pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
+	.pipe(sourcemaps.init())
+		.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
+		.pipe(rename({ suffix: '.min', prefix : '' }))
+		.pipe(autoprefixer(['last 15 versions']))
+		.pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
+	.pipe(sourcemaps.write())
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream())
 });
@@ -37,10 +40,15 @@ gulp.task('styles', function() {
 gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
+		'node_modules/bootstrap/js/dist/util.js',
+		'node_modules/bootstrap/js/dist/modal.js',
+		'node_modules/owl.carousel/dist/owl.carousel.js',
 		'app/js/common.js', // Always at the end
 		])
-	.pipe(concat('scripts.min.js'))
-	// .pipe(uglify()) // Mifify js (opt.)
+	.pipe(sourcemaps.init())
+		.pipe(concat('scripts.min.js'))
+		// .pipe(uglify()) // Mifify js (opt.)
+	.pipe(sourcemaps.write())
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
 });
