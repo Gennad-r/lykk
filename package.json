@@ -23,5 +23,8 @@
     "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.8",
     "owl.carousel": "^2.3.4"
+  },
+  "dependencies": {
+    "hamburgers": "^1.1.3"
   }
 }
