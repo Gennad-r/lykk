@@ -215,7 +215,7 @@ nav .has-submenu{
 .navigation-main{
 	.has-submenu{
 		&:hover{
-			ul{
+			&>ul{
 				visibility: visible;
 			}
 		}
@@ -248,6 +248,24 @@ nav .has-submenu{
 		a{
 			padding-right: 10px;
 		}
+		.has-submenu{
+			a:after{
+				border-width: 4px 0 4px 4px;
+				border-color: transparent transparent transparent #ccc;
+			}
+			ul{
+				top: 0;
+				left: 100%;
+				padding-top: 0;
+				background-color: #fff;
+				&:after{
+					display: none;
+				}
+				li{
+					background-color: #fff;
+				}
+			}
+		}
 	}
 	ul, li{
 		list-style: none;
@@ -271,6 +289,7 @@ nav .has-submenu{
 			position: relative;
 			&:hover{
 				text-decoration: underline;
+				color: $accent;
 			}
 			&:after{
 				content:"";
@@ -343,9 +362,11 @@ section{
 	}
 	&__plate{
 		padding: 10px;
+		min-height: 100%;
 		border: 1px solid #eee;
 		cursor: pointer;
 		transition: background-color 0.7s;
+		align-items: center;
 		&:hover, &.active-plate{
 			background-color: $accent;
 			color: #fff;
@@ -355,30 +376,59 @@ section{
 		}
 	}
 	&__icon-holder{
-		flex: 0 0 80px;
+		flex: 0 0 50px;
 		span{
-			font-size: 60px;
+			font-size: 40px;
 			line-height: 1;
 			color: $accent;
 		}
 	}
 	&__card-text{
-		flex: 0 0 calc(75% - 80px);
+		font-size: 0.9rem;
+		flex: 1 0 calc(75% - 50px);
 	}
 }
 
 //slider
 
-.owl-carousel .owl-stage-outer{
-	overflow: visible;
-	.owl-item{
-		opacity: 0.2;
-		&.active{
-			opacity: 1;
+.owl-carousel{
+	.owl-stage-outer{
+		overflow: visible;
+		.owl-item{
+			opacity: 0.2;
+			&.active{
+				opacity: 1;
+			}
 		}
 	}
+	.owl-nav{
+		button{
+			&.owl-prev, &.owl-next{
+				position: absolute;
+				left: 15px;
+				top: 50%;
+				transform: translateY(-50%);
+				background-color: rgba(#fff, 0.9);
+				width: 1.8rem;
+				height: 1.8rem;
+				border-radius: 50%;
+				text-align: center;
+				span{
+					line-height: 1.8rem;
+				}
+				&:focus{
+					outline: none;
+				}
+			}
+			&.owl-next{
+				left: auto;
+				right: 15px;
+			}
+			
+		}
+	}
+	
 }
-
 
 //production section
 
