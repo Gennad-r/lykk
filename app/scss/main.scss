@@ -213,19 +213,31 @@ nav .has-submenu{
 	}
 }
 .navigation-main{
+	&>nav>ul>li{
+		border-right: 1px solid #ccc;
+	}
 	.has-submenu{
 		&:hover{
 			&>ul{
 				visibility: visible;
+				opacity: 1;
+			}
+			&>a{
+				color: $accent;
+				text-decoration: underline;
+				&:after{
+					border-color: $accent transparent transparent transparent;
+				}
 			}
 		}
 		position: relative;
 		ul{
 			visibility: hidden;
+			opacity: 0;
+			transition: 0.5s;
 			position: absolute;
 			z-index: 99;
 			background-color: #fff;
-			display: flex;
 			flex-wrap: wrap;
 			left: 0;
 			padding: 15px;
@@ -247,8 +259,12 @@ nav .has-submenu{
 		}
 		a{
 			padding-right: 10px;
+			white-space: nowrap;
 		}
 		.has-submenu{
+			&:hover a:after{
+				border-color: transparent transparent transparent $accent;
+			}
 			a:after{
 				border-width: 4px 0 4px 4px;
 				border-color: transparent transparent transparent #ccc;
@@ -475,8 +491,18 @@ section{
 		}
 	}
 }
-
+.bg-image{
+	background-size: cover;
+	&>.container{
+		background-color: #fff;
+	}
+}
 // complex solutions
+.complex-solutions{
+	.bg-image{
+		background-image: url(../img/complex-solutions.jpg);
+	}
+}
 
 .solution{
 	font-weight: 300;
