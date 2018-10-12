@@ -16,7 +16,7 @@ html{
 body {
 	min-width: 320px;
 	position: relative;
-	line-height: 1.65;
+	line-height: 1.4;
 	font-family: $default-font;
 	font-weight: 300;
 	overflow-x: hidden;
@@ -214,13 +214,15 @@ nav .has-submenu{
 }
 .navigation-main{
 	&>nav>ul>li{
-		border-right: 1px solid #ccc;
+		//border-right: 1px solid #ccc;
 	}
 	.has-submenu{
 		&:hover{
 			&>ul{
 				visibility: visible;
 				opacity: 1;
+				height: auto;
+				overflow: visible;
 			}
 			&>a{
 				color: $accent;
@@ -234,6 +236,8 @@ nav .has-submenu{
 		ul{
 			visibility: hidden;
 			opacity: 0;
+			height: 0;
+			overflow: hidden;
 			transition: 0.5s;
 			position: absolute;
 			z-index: 99;
@@ -299,7 +303,7 @@ nav .has-submenu{
 			}
 		}
 		a{
-			color: $text;
+			color: #000;
 			display: block;
 			padding: 0 7px;
 			position: relative;
@@ -379,7 +383,7 @@ section{
 	&__plate{
 		padding: 10px;
 		min-height: 100%;
-		border: 1px solid #eee;
+		border: 1px solid $accent;
 		cursor: pointer;
 		transition: background-color 0.7s;
 		align-items: center;
