@@ -1,7 +1,32 @@
+$border-radius:               0;
+$border-radius-lg:            0;
+$border-radius-sm:            0;
+
 @import "../libs/bootstrap/scss/bootstrap-reboot.scss";
 @import "../libs/bootstrap/scss/bootstrap-grid.scss";
 @import "../libs/bootstrap/scss/utilities/_sizing.scss";
 @import "../libs/bootstrap/scss/utilities/_spacing.scss";
+
+
+// Pagination
+
+$pagination-color:                  $text;
+$pagination-border-color:           rgba($text, 0.3);
+
+$pagination-focus-box-shadow:       $input-btn-focus-box-shadow !default;
+
+$pagination-hover-color:            #fff;
+$pagination-hover-bg:               $accent;
+$pagination-hover-border-color:     $accent;
+
+$pagination-active-color:           #fff;
+$pagination-active-bg:              $accent;
+$pagination-active-border-color:    $accent;
+
+$pagination-disabled-color:         $gray-600 !default;
+$pagination-disabled-bg:            $white !default;
+$pagination-disabled-border-color:  $gray-300 !default;
+@import "../libs/bootstrap/scss/_pagination.scss";
 @import "../../node_modules/owl.carousel/src/scss/owl.carousel.scss";
 // Settings
 // ==================================================
@@ -10,7 +35,7 @@ $hamburger-padding-y           : 15px !default;
 $hamburger-layer-width         : 40px !default;
 $hamburger-layer-height        : 2px !default;
 $hamburger-layer-spacing       : 10px !default;
-$hamburger-layer-color         : $accent !default;
+$hamburger-layer-color         : $accent;
 $hamburger-layer-border-radius : 0px !default;
 $hamburger-hover-opacity       : 0.7 !default;
 $hamburger-active-layer-color  : $hamburger-layer-color !default;
