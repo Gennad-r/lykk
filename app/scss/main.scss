@@ -618,7 +618,13 @@ section{
 
 .acc-block{
 	margin-bottom: 30px;
-	.column-text{
+	&:first-child .acc-text{
+		display: block;
+		//overflow: hidden;
+		//height: 0;
+		//transition: height 0.3s;
+	}
+	.acc-text{
 		display: none;
 	}
 	&__header{
@@ -656,9 +662,9 @@ section{
 	}
 	&.active{
 		margin-bottom: 10px;
-		.column-text{
-			display: block;
-			margin: 15px 0 30px;
+		.acc-text{
+			//height: auto;
+			//margin: 15px 0 30px;
 		}
 		.acc-block__header{
 			.bull:before{
@@ -787,6 +793,40 @@ form{
 	}
 }
 
+.tabs{
+	ul{
+		list-style: none;
+		padding: 0;
+	}
+	&-controls{
+		margin-top: 2rem;
+		.selected{
+			font-weight: 400;
+			color: $accent;
+		}
+		li{
+			display: inline-block;
+			cursor: pointer;
+			&:not(:last-child){
+				margin-right: 0.5rem;
+				padding-right: 0.5rem;
+				position: relative;
+				&:after{
+					content:'';
+					position: absolute;
+					height: 100%;
+					width: 1px;
+					right: -0.5px;
+					top: 0;
+					background-color: $text;
+				}
+			}
+		}
+	}
+	.tabs-content{
+		margin-bottom: 2rem;
+	}
+}
 
 footer{
 	.footer-top{

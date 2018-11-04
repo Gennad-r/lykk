@@ -7,9 +7,6 @@ $(function() {
 		'navText': ['<span class="icon-arr-left"></span>', '<span class="icon-arr-right"></span>']
 	});
 
-	// garbage cleaner )
-	$('body>a').hide();
-	// garbage cleaner )
 
 
 
@@ -44,3 +41,12 @@ $(window).on('scroll', (function() {
 		};
 
 	}));
+
+
+var acc = $('.acc-block');
+	acc.find('.acc-block__header').on('click', function (e) {
+		acc.find('.acc-text').fadeOut();
+		acc.removeClass('active');
+		$(this).parent('.acc-block').find('.acc-text').fadeIn();
+		$(this).parent('.acc-block').addClass('active');
+	})
