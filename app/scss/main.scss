@@ -436,6 +436,11 @@ section{
 	}
 }
 .about-company{
+	a{
+		&:hover{
+			text-decoration: none;
+		}
+	}
 	color: $accent;
 	&>div[class^="col"]{
 		margin-bottom: 15px;
@@ -444,7 +449,7 @@ section{
 		padding: 10px;
 		min-height: 100%;
 		border: 1px solid $accent;
-		cursor: pointer;
+		//cursor: pointer;
 		transition: background-color 0.7s;
 		align-items: center;
 		&:hover, &.active-plate{
