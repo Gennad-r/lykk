@@ -13,18 +13,29 @@ $(function() {
 });
 
 
+function tabs(tabs, blocs) {
+	if (tabs.length == blocs.length) {
+		$(blocs[0]).show();
+		tabs.on('click', function (e) {
+			e.preventDefault();
+			tabs.removeClass('active');
+			blocs.hide();
+			$(this).addClass('active');
+			$(blocs[$(this).data('order')]).fadeIn();
+		})
+	}
+}
+
 
 //complex solutions
 var solutionPlates = $('.complex-solutions .solution'),
 	solutionTextBlocks = $('.complex-solutions .solution__text-block');
-$(solutionTextBlocks[0]).show();
-solutionPlates.on('click', function (e) {
-	e.preventDefault();
-	solutionPlates.removeClass('active');
-	solutionTextBlocks.hide();
-	$(this).addClass('active');
-	$(solutionTextBlocks[$(this).data('order')]).fadeIn();
-})
+
+tabs(solutionPlates, solutionTextBlocks);
+
+// product tabs
+tabs( $('.tabs-controls li'), $('.tabs-content li') )
+
 
 // to top
 $('.go-top').click(function () {

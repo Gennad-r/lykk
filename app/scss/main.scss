@@ -805,7 +805,7 @@ form{
 	}
 	&-controls{
 		margin-top: 2rem;
-		.selected{
+		.active{
 			font-weight: 400;
 			color: $accent;
 		}
@@ -830,6 +830,9 @@ form{
 	}
 	.tabs-content{
 		margin-bottom: 2rem;
+		li{
+			display: none;
+		}
 	}
 }
 
