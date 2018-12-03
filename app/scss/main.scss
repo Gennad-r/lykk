@@ -852,4 +852,35 @@ footer{
 }
 
 
+.modal{
+	.form-control{
+		line-height: 1.2;
+		padding: 0.2rem 0.4rem;
+	}
+	h1{
+		font-size: 1.5rem;
+	}
+	.modal-content{
+		padding: 15px 30px;
+	}
+	.al-c{
+		  align-items: baseline;
+	}
+	h4{
+		text-transform: uppercase;
+		font-weight: 200;
+		color: $accent;
+		font-size: 1.2rem;
+	}
+	p{
+		color: $accent;
+		margin: 0;
+		font-size: 1em;
+	}
+	select{
+		color: #999;
+		font-weight: 200;
+	}
+}
+
 @import "media"; // Always at the end

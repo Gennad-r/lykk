@@ -4,8 +4,11 @@ $border-radius-sm:            0;
 
 @import "../libs/bootstrap/scss/bootstrap-reboot.scss";
 @import "../libs/bootstrap/scss/bootstrap-grid.scss";
+@import "../libs/bootstrap/scss/_forms.scss";
 @import "../libs/bootstrap/scss/utilities/_sizing.scss";
 @import "../libs/bootstrap/scss/utilities/_spacing.scss";
+@import "../libs/bootstrap/scss/_input-group.scss";
+@import "../libs/bootstrap/scss/_modal.scss";
 
 
 // Pagination

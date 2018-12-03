@@ -7,7 +7,10 @@ $(function() {
 		'navText': ['<span class="icon-arr-left"></span>', '<span class="icon-arr-right"></span>']
 	});
 
-
+$('#order').click(function (e) {
+	e.preventDefault();
+	$('.modal').modal('show');
+})
 
 
 });
@@ -61,3 +64,21 @@ var acc = $('.acc-block');
 		$(this).parent('.acc-block').find('.acc-text').fadeIn();
 		$(this).parent('.acc-block').addClass('active');
 	})
+
+
+
+$("#check-request-modal").submit(function() { //Change
+		var th = $(this);
+			$.ajax({
+				type: "POST",
+				url: "mail.php", //Change
+				data: th.serialize()
+			}).done(function() {
+				$('#check-request-modal').modal('hide');
+				setTimeout(function() {
+					// Done Functions
+					th.trigger("reset");
+				}, 1000);
+			});
+return false;
+		});
