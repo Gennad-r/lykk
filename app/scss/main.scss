@@ -67,7 +67,7 @@ ul.sidebar{
 	}
 }
 
-.img-responsive {
+.img-responsive, .content-area img {
 	display: block;
 	max-width: 100%;
 	height: auto;
@@ -102,8 +102,8 @@ ul.sidebar{
 	}
 }
 
-b, strong {
-	font-weight: bold;
+b, strong, th {
+	font-weight: 500;
 }
 
 .bg-primary{
@@ -185,7 +185,7 @@ header{
 	}
 }
 
-nav .has-submenu{
+nav .menu-item-has-children{
 	&>a{
 		position: relative;
 		padding-right: 10px;
@@ -235,13 +235,13 @@ nav .has-submenu{
 		margin-left: auto;
 		display: flex;
 		flex: 1 0 auto;
-		.has-submenu{
+		.menu-item-has-children{
 			a{
 		margin-right: 15px;
 				
 			}
 		
-			&>.has-submenu{
+			&>.menu-item-has-children{
 				
 				&:last-child{
 					a{
@@ -274,7 +274,7 @@ nav .has-submenu{
 	&>nav>ul>li{
 		//border-right: 1px solid #ccc;
 	}
-	.has-submenu{
+	.menu-item-has-children{
 		&:hover{
 			&>ul{
 				visibility: visible;
@@ -323,7 +323,7 @@ nav .has-submenu{
 			padding-right: 10px;
 			white-space: nowrap;
 		}
-		.has-submenu{
+		.menu-item-has-children{
 			&:hover a:after{
 				border-color: transparent transparent transparent $accent;
 			}
@@ -799,7 +799,7 @@ form{
 }
 
 .tabs{
-	ul{
+	&>ul{
 		list-style: none;
 		padding: 0;
 	}
@@ -830,7 +830,7 @@ form{
 	}
 	.tabs-content{
 		margin-bottom: 2rem;
-		li{
+		&>li{
 			display: none;
 		}
 	}

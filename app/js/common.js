@@ -21,6 +21,7 @@ function tabs(tabs, blocs) {
 		$(blocs[0]).show();
 		tabs.on('click', function (e) {
 			e.preventDefault();
+			console.log('click');
 			tabs.removeClass('active');
 			blocs.hide();
 			$(this).addClass('active');
@@ -37,7 +38,7 @@ var solutionPlates = $('.complex-solutions .solution'),
 tabs(solutionPlates, solutionTextBlocks);
 
 // product tabs
-tabs( $('.tabs-controls li'), $('.tabs-content li') )
+tabs( $('.tabs-controls>li'), $('.tabs-content>li') )
 
 
 // to top
