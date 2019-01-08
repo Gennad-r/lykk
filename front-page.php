@@ -26,11 +26,9 @@
 				<?php endif ?>
 				
 
-				<div class="row about-company">
 						<?php 
 						echo do_shortcode( '[directions_menu_code]' );
 						?>
-				</div>
 
 				<div class="row mt-3">
 					<div class="col-12">

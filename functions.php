@@ -199,7 +199,7 @@ add_action('init', 'create_custom_taxes');
     function directions_menu($attr){
         $plates = get_field('direction_menu', 'options');
 
-        $html = '';
+        $html = '<div class="row about-company">';
         foreach ($plates as $plate) {
 			$html .= '<div class="col-lg-3 col-md-6">';
 			$html .= $plate['link']?'<a href="' . $plate['link'] . '">':'';
@@ -210,7 +210,7 @@ add_action('init', 'create_custom_taxes');
 			$html .= $plate['link']?'</a>':'';
 			$html .= '</div>';
         }
-		//$html .= '</div>';
+		$html .= '</div>';
         return $html;
     }
     add_shortcode('directions_menu_code', 'directions_menu');
