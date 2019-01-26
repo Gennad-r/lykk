@@ -40,6 +40,8 @@ if ( ! function_exists( 'lykk_setup' ) ) :
 		// Image sizes
 		add_image_size( 'full_wide', 1168, 360, true );
 		add_image_size( 'product', 500, 500, true );
+		add_image_size( 'certificate', 280, 370, true );
+		add_image_size( 'partner', 406, 106, true );
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
@@ -165,8 +167,8 @@ function create_post_type() {
     register_post_type( 'projects',
         array(
             'labels' => array(
-                'name' => __( 'Реализованные проекты' ),
-                'singular_name' => __( 'Проект' )
+                'name' => __( 'Реализованные объекты' ),
+                'singular_name' => __( 'Объекты' )
             ),
             'public' => true,
             'has_archive' => true,
@@ -214,3 +216,49 @@ add_action('init', 'create_custom_taxes');
         return $html;
     }
     add_shortcode('directions_menu_code', 'directions_menu');
+
+
+function letters_limit($str, $lim)
+    {
+    	mb_internal_encoding("UTF-8");
+    	$str = strip_tags($str);
+    	if(strlen($str) >  $lim) {
+            $str = mb_substr($str, 0, $lim) . ' ...';
+        }
+        return $str;
+    }    
+
+function post_share_icons_small( $postid=false ) {
+    if ( post_password_required() ) return;
+
+    global $post;
+    $postid = $postid ? $postid :$post->ID;
+    if (!$postid) return;
+
+    $lykk_psi_source = esc_url(home_url('/'));
+    $lykk_psi_url = get_permalink($postid);
+    $lykk_psi_url = urlencode( $lykk_psi_url );
+    $lykk_psi_title = esc_attr( the_title_attribute( 'echo=0' ) );
+    $lykk_psi_summary = mb_substr(get_the_excerpt(), 0,120);
+    $lykk_psi_img = wp_get_attachment_url( get_post_thumbnail_id($postid) );
+
+    $output = '';
+
+    $output .= '<div class="post_share_links share-id-box-'.$postid.'">';
+    $output .= '<ul class="post_share_icons_list">';
+
+    $output .= '<li class="s_facebook"><a href="http://www.facebook.com/share.php?u='.$lykk_psi_url.'&amp;t='. urlencode($lykk_psi_title) .'" target="_blank" title="'. esc_attr__( 'Share on Facebook', 'eco-world' ) .'" class="tooltip"><i class="icon-fb"></i></a></li>';
+
+    //$output .= '<li class="s_twitter"><a href="http://twitter.com/share?text='. urlencode($lykk_psi_title) .'&amp;url='. $lykk_psi_url .'" target="_blank" title="'. esc_attr__( 'Share on Twitter', 'eco-world' ) .'" class="tooltip"><i class="fa fa-twitter"></i></a></li>';
+
+    //$output .= '<li class="s_linkedin"><a title="'. esc_attr__( 'Share on LinkedIn', 'eco-world' ) .'" rel="external" href="http://www.linkedin.com/shareArticle?mini=true&amp;url='. $lykk_psi_url .'&amp;title='. urlencode($lykk_psi_title) .'&amp;summary='. urlencode($lykk_psi_summary) .'&amp;source='. $lykk_psi_source .'" target="_blank" class="tooltip"><i class="fa fa-linkedin"></i></a></li>';
+
+    //$output .= '<li class="s_tumblr"><a title="'. esc_attr__( 'Send in Email', 'eco-world' ) .'"href="mailto:?subject='. $lykk_psi_title .'&amp;body='. $lykk_psi_url . '" target="_blank" class="tooltip"><i class="fa fa-envelope"></i></a></li>';
+
+    $output .= '</ul>';
+    $output .= '<div class="clear"></div>';
+    $output .= '</div>';
+
+    return $output;
+
+}

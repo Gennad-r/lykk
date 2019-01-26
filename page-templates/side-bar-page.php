@@ -25,7 +25,7 @@ get_header(); ?>
 				<ul class="sidebar">
 				<?php 
 					$listID = !$post->post_parent?$post->ID:$post->post_parent;
-					$side_list = get_page_children($listID, get_pages());
+					$side_list = get_page_children($listID, get_pages(array('sort_column' => 'post_date', 'sort_order' => 'DESC')));
 					foreach ($side_list as $elem) :
 				?>
 					<li><a href="<?php echo get_permalink( $elem->ID, false ) ?>"><?php echo $elem->post_title ?></a></li>
