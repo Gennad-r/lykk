@@ -6,6 +6,7 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 
+	<?php $nums = get_field('contacts', 'options')['phone_numbers']; ?>
 </head>
 
 <body>
@@ -33,7 +34,13 @@
 								</form>
 							</div>
 							<ul class="d-flex justify-content-end">
-								<li class="has-submenu"><a href="#">+ 38 066 66 66 687</a></li>
+								<li class="menu-item-has-children"><a href="javascript:void(0);"><?php echo $nums[0]['number']; ?></a>
+									<ul class="sub-menu">
+										<?php foreach ($nums as $num) : ?>
+											<li><a href="tel:<?php echo preg_replace('/[\(\)\+\-\s]+/', '', $num['number']) ?>"><?php echo $num['number']; ?></a></li>
+										<?php endforeach ?>
+									</ul>
+								</li>
 								<li><a href="#"><span class="icon-fb"></span></a></li>
 								<li><a href="#"><span class="icon-phone"></span></a></li>
 								<li><a href="#"><span class="icon-skype"></span></a></li>
@@ -55,69 +62,9 @@
 								'items_wrap' => '<ul class="%1$s d-flex">%3$s</ul>'
 							 ) );
 						?>
-					<!-- <nav>
-						<ul class="d-flex">
-							<li class="has-submenu"><a href="about.html">О компании</a>
-								<ul>
-									<li><a href="#">Новости компании</a></li>
-									<li><a href="#">Публикации и семинары</a></li>
-									<li><a href="#">Лицензии и сертификаты</a></li>
-									<li><a href="#">Партнеры</a></li>
-									<li><a href="#">Отзывы заказчиков</a></li>
-								</ul>
-							</li>
-							<li class="has-submenu"><a href="equipment.html">Оборудование</a>
-								<ul>
-									<li class="has-submenu"><a href="#">Собственное производство</a>
-										<ul>
-											<li><a href="#">Установки  биологической очистки</a></li>
-											<li><a href="#">Жироуловители</a></li>
-											<li><a href="#">Нефтеуловители</a></li>
-											<li><a href="#">Станции перекачивания сточных вод</a></li>
-											<li><a href="#">Нестандартное емкостное оборудование</a></li>
-											<li><a href="#">Другое оборудование</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Другое оборудование</a></li>
-								</ul>
-							</li>
-							<li class="has-submenu"><a href="solutions.html">Решения</a>
-								<ul>
-									<li><a href="">Комплексные решения по очистке сточных вод</a></li>
-									<li><a href="">Очистка бытовых сточных вод</a></li>
-									<li><a href="">Очистка промышленных сточных вод</a></li>
-									<li><a href="">Утилизация осадков</a></li>
-									<li><a href="">Обеззараживание воды</a></li>
-								</ul>
-							</li>
-							<li class="has-submenu"><a href="project.html">Проектирование</a>
-								<ul>
-									<li><a href="">Проектирование узлов учета воды и тепла</a></li>
-									<li><a href="">Проектирование внутренних систем водоснабжения и канализаций</a></li>
-									<li><a href="">Проектирование наружных систем водоснабжения и канализаций</a></li>
-									<li><a href="">Проектирование очистных сооружений канализации</a></li>
-								</ul>
-							</li>
-							<li class="has-submenu"><a href="devices.html">Приборы учета</a>
-								<ul>
-									<li><a href="#">Поверка приборов учета воды</a></li>
-									<li><a href="#">Установка приборов учета воды и тепла</a></li>
-									<li><a href="#">Комплексные решения по дистанционному считыванию данных</a></li>
-								</ul>
-							</li>
-							<li class="has-submenu"><a href="">Анализ воды</a>
-								<ul>
-									<li><a href="#">Лабораторные исследования питьевой и сточной воды</a></li>
-									<li><a href="#">Оборудование для мониторинга качества</a></li>
-								</ul>
-							</li>
-							<li><a href="objects.html">Объекты</a></li>
-							<li><a href="">Законодательство</a></li>
-							<li><a href="">Контакты</a></li>
-						</ul>
-					</nav> -->
 				</div>
 			</div>
 		</div>
 	</header>
 	<main>
+		

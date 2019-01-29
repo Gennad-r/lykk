@@ -1,5 +1,6 @@
 	</main>
 	<footer>
+		<?php $nums = get_field('contacts', 'options')['phone_numbers']; ?>
 		<div class="footer-top">
 			<div class="container">
 				<div class="row">
@@ -8,7 +9,13 @@
 					</nav>
 					<nav class="prenav prenav-right">
 						<ul class="d-flex justify-content-end">
-							<li class="has-submenu"><a href="#">+ 38 066 66 66 687</a></li>
+							<li class="menu-item-has-children"><a href="javascript:void(0);"><?php echo $nums[0]['number']; ?></a>
+								<ul class="sub-menu">
+									<?php foreach ($nums as $num) : ?>
+										<li><a href="tel:<?php echo preg_replace('/[\(\)\+\-\s]+/', '', $num['number']) ?>"><?php echo $num['number']; ?></a></li>
+									<?php endforeach ?>
+								</ul>
+							</li>
 							<li><a href="#"><span class="icon-fb"></span></a></li>
 							<li><a href="#"><span class="icon-phone"></span></a></li>
 							<li><a href="#"><span class="icon-skype"></span></a></li>

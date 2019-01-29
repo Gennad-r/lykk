@@ -177,7 +177,18 @@
 				</div>
 			</div>
 		</section>
--->		<section class="finished-projects">
+
+-->		
+
+		<?php $real_projects = get_posts(array(
+			'post_type' => 'projects',
+			 'numberposts' => 4
+		)); 
+			
+		if ($real_projects) :
+		?>
+
+		<section class="finished-projects">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -186,39 +197,23 @@
 				</div>
 				<div class="row project-posts">
 					<div class="col-12">
+						<?php foreach ($real_projects as $key => $project) : ?>
 						<div class="post-holder mb-3">
-							<div class="img-holder"><img src="<?php echo get_template_directory_uri(); ?>/app/img/news-01.jpg" alt="" class="img-responsive"></div>
+							<div class="img-holder"><img src="<?php echo get_the_post_thumbnail_url( $project, 'product' ); ?>" alt="<?php echo $project->post_title; ?>" class="img-responsive"></div>
 							<div class="text-holder">
-								<div class="date">04.06.2017</div>
-								<div class="post-header">Нефтеуловительная система АЗС ОККО</div>
-								<p>Не успели утихнуть страсти относительно общедомовых счетчиков газа, как вступило в силу законодательство, которое фактически отменяет поквартирный учет воды и тепла. Если с тепловыми счетчиками все более-менее понятно, учет тепла итак ведется общедомовой или подъездный за редким исключением, то со счетчиками воды – вопросов больше чем ответов. Итак, прежде всего Закон «О коммерческом учете тепловой энергии и водоснабжения» предписывает установить общедомовые приборы учета на все дома, присоединенные к внешним тепловым сетям, горячего и холодного водоснабжения. Согласно Закону, счетчики должны быть установлены операторами внешних сетей к 1 октября 2018 (для жилых домов), либо к 1 октября 2017 (для нежилых зданий).</p>
-								<p class="read-more text-right"><a href="projects.html">читать больше...</a></p>
+								<div class="date"><?php echo get_post_time('d.m.Y', $project->ID); ?></div>
+								<div class="post-header"><?php echo $project->post_title; ?></div>
+								<?php echo letters_limit($project->post_content, 500); ?>
+								<p class="read-more text-right"><a href="<?php echo get_permalink($project->ID); ?>">читать больше...</a></p>
 							</div>
 						</div>
-						<div class="post-holder mb-3">
-							<div class="img-holder"><img src="<?php echo get_template_directory_uri(); ?>/app/img/news-02.jpg" alt="" class="img-responsive"></div>
-							<div class="text-holder">
-								<div class="date">04.06.2017</div>
-								<div class="post-header">Нефтеуловительная система АЗС ОККО</div>
-								<p>Не успели утихнуть страсти относительно общедомовых счетчиков газа, как вступило в силу законодательство, которое фактически отменяет поквартирный учет воды и тепла. Если с тепловыми счетчиками все более-менее понятно, учет тепла итак ведется общедомовой или подъездный за редким исключением, то со счетчиками воды – вопросов больше чем ответов. Итак, прежде всего Закон «О коммерческом учете тепловой энергии и водоснабжения» предписывает установить общедомовые приборы учета на все дома, присоединенные к внешним тепловым сетям, горячего и холодного водоснабжения. Согласно Закону, счетчики должны быть установлены операторами внешних сетей к 1 октября 2018 (для жилых домов), либо к 1 октября 2017 (для нежилых зданий).</p>
-								<p class="read-more text-right"><a href="projects.html">читать больше...</a></p>
-							</div>
-						</div>
-						<div class="post-holder mb-3">
-							<div class="img-holder"><img src="<?php echo get_template_directory_uri(); ?>/app/img/news-03.jpg" alt="" class="img-responsive"></div>
-							<div class="text-holder">
-								<div class="date">04.06.2017</div>
-								<div class="post-header">Нефтеуловительная система АЗС ОККО</div>
-								<p>Не успели утихнуть страсти относительно общедомовых счетчиков газа, как вступило в силу законодательство, которое фактически отменяет поквартирный учет воды и тепла. Если с тепловыми счетчиками все более-менее понятно, учет тепла итак ведется общедомовой или подъездный за редким исключением, то со счетчиками воды – вопросов больше чем ответов. Итак, прежде всего Закон «О коммерческом учете тепловой энергии и водоснабжения» предписывает установить общедомовые приборы учета на все дома, присоединенные к внешним тепловым сетям, горячего и холодного водоснабжения. Согласно Закону, счетчики должны быть установлены операторами внешних сетей к 1 октября 2018 (для жилых домов), либо к 1 октября 2017 (для нежилых зданий).</p>
-								<p class="read-more text-right"><a href="projects.html">читать больше...</a></p>
-							</div>
-						</div>
+						<?php endforeach; ?>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-12">
 						<p class="text-right">
-							<a href="project.html" class="btn">
+							<a href="/projects" class="btn">
 								Релизованные проекты
 							</a>
 						</p>
@@ -226,6 +221,8 @@
 				</div>
 			</div>
 		</section>
+		<?php endif; ?>
+
 		<?php 
 			$news_posts = get_posts(array('category' => 1, 'numberposts' => 4));
 			if (count($news_posts) >= 4) :
