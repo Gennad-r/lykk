@@ -255,7 +255,7 @@ nav .menu-item-has-children{
 			&:hover .sub-menu{
 				visibility: visible;
 			}
-			a{
+			&>a{
 				margin-right: 15px;
 			}
 		

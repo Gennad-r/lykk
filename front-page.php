@@ -29,7 +29,6 @@
 						<?php 
 						echo do_shortcode( '[directions_menu_code]' );
 						?>
-
 				<div class="row mt-3">
 					<div class="col-12">
 						<h2>Чем занимается компания LYKK</h2>
@@ -93,7 +92,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<h1>комплексные решения по очистке сточных вод</h1>
+						<h1>Проектирование</h1>
 					</div>
 				</div>
 			</div>
@@ -182,7 +181,7 @@
 
 		<?php $real_projects = get_posts(array(
 			'post_type' => 'projects',
-			 'numberposts' => 4
+			'numberposts' => 4
 		)); 
 			
 		if ($real_projects) :
