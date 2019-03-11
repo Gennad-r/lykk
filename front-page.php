@@ -258,7 +258,7 @@
 			</div>
 		</section>
 		<?php endif ?>
-		<sections class="contacts">
+		<section class="contacts">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -272,40 +272,9 @@
 						</div>
 					</div>
 					<div class="col-lg-8">
-						<form>
-							<div class="row">
-								<div class="col-6">
-									<div class="field-holder">
-										<input type="text" required placeholder="Компания*">
-									</div>
-									<div class="field-holder">
-										<input type="text" required placeholder="Имя*">
-									</div>
-									<div class="field-holder">
-										<input type="text" required placeholder="Email*">
-									</div>
-									<div class="field-holder">
-										<input type="text" required placeholder="Контактный номер*">
-									</div>
-									<div class="field-holder">
-										<input type="text" required placeholder="Город*">
-									</div>
-									<div class="field-holder">
-										<input type="text" required placeholder="Страна*">
-									</div>
-								</div>
-								<div class="col-6">
-									<div class="field-holder">
-										<textarea placeholder="Написать сообщение*" cols="30" rows="10"></textarea>
-									</div>
-								</div>
-								<div class="col-12">
-									<p class="text-right"><button class="btn">Отправить сообщение</button></p>
-								</div>
-							</div>	
-						</form>
+						<?php echo do_shortcode('[contact-form-7 id="1880" title="Homepage contact form"]'); ?>
 					</div>
 				</div>
 			</div>
-		</sections>
+		</section>
 		<?php get_footer(); ?>

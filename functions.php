@@ -133,9 +133,9 @@ function lykk_scripts() {
 
 	wp_enqueue_style( 'main-style', get_template_directory_uri() . '/app/css/main.min.css', array(), '1.0');
 
-	wp_deregister_script( 'jquery' );
+	//wp_deregister_script( 'jquery' );
 
-    wp_enqueue_script( 'lykk-main-script', get_template_directory_uri() . '/app/js/scripts.min.js', array(), '1.0', true );
+    wp_enqueue_script( 'lykk-main-script', get_template_directory_uri() . '/app/js/scripts.min.js', array('jquery'), '1.0', true );
 
 }
 add_action( 'wp_enqueue_scripts', 'lykk_scripts' );
