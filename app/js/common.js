@@ -25,7 +25,7 @@ function tabs(tabs, blocs) {
 			tabs.removeClass('active');
 			blocs.hide();
 			jQuery(this).addClass('active');
-			jQuery(blocs[$(this).data('order')]).fadeIn();
+			jQuery(blocs[jQuery(this).data('order')]).fadeIn();
 		})
 	}
 }
