@@ -262,3 +262,27 @@ function post_share_icons_small( $postid=false ) {
     return $output;
 
 }
+
+
+	// WP Globus menu building block --------
+	function lang_menu(){
+		if (class_exists('WPGlobus')) {
+			global $wp;
+			$current_url = home_url( add_query_arg( array(), $wp->request ) );
+			$current_language = WPGlobus::Config()->language;
+			$lang_list = WPGlobus::Config()->enabled_languages;
+			$lang_names = WPGlobus::Config()->language_name;
+			$html = '<li class="menu-item-has-children"><a href="javascript:void(0);">' . $lang_names[$current_language] . '</a>';
+			$html .= '<ul class="sub-menu">';
+			if (count($lang_list)) {
+				foreach ($lang_list as $lang_code) {
+					$html .= '<li class="menu-item">';
+					$html .= '<a href="' . WPGlobus_Utils::localize_url( $current_url, $lang_code ) . '">' . $lang_names[$lang_code] . '</a>';
+					$html .= '</li>';
+				}
+			}
+			$html .= '</ul>';			
+			$html .= '</li>';
+			return $html;
+		}			
+	}

@@ -20,7 +20,8 @@
 							<li><a href="#"><span class="icon-phone"></span></a></li>
 							<li><a href="#"><span class="icon-skype"></span></a></li>
 							<li><a href="#"><span class="icon-insta"></span></a></li>
-							<li class="has-submenu"><a href="#">Ру</a></li>
+							<?php echo lang_menu(); ?>
+							</li>
 						</ul>
 					</nav>
 				</div>

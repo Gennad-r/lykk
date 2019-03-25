@@ -140,17 +140,21 @@
 				</div>
 				<div class="row project-posts">
 					<div class="col-12">
-						<?php foreach ($real_projects as $key => $project) : ?>
+						<?php foreach ($real_projects as $key => $post) :
+						setup_postdata($post);	?>
 						<div class="post-holder mb-3">
-							<div class="img-holder"><img src="<?php echo get_the_post_thumbnail_url( $project, 'product' ); ?>" alt="<?php echo $project->post_title; ?>" class="img-responsive"></div>
+							<div class="img-holder"><img src="<?php echo get_the_post_thumbnail_url( $post, 'product' ); ?>" alt="<?php echo $project->post_title; ?>" class="img-responsive"></div>
 							<div class="text-holder">
-								<div class="date"><?php echo get_post_time('d.m.Y', $project->ID); ?></div>
-								<div class="post-header"><?php echo $project->post_title; ?></div>
-								<?php echo letters_limit($project->post_content, 500); ?>
-								<p class="read-more text-right"><a href="<?php echo get_permalink($project->ID); ?>">читать больше...</a></p>
+								<div class="date"><?php echo get_post_time('d.m.Y', $post->ID); ?></div>
+								<div class="post-header"><?php echo apply_filters('the_title', $post->post_title); ?></div>
+								<p><?php $post_content = apply_filters('the_content', $post->post_content); ?></p>
+								<?php echo letters_limit($post_content, 500); ?>
+								<p class="read-more text-right"><a href="<?php echo get_permalink($post->ID); ?>">читать больше...</a></p>
 							</div>
 						</div>
-						<?php endforeach; ?>
+						<?php 
+					wp_reset_postdata();
+					endforeach; ?>
 					</div>
 				</div>
 				<div class="row">
@@ -178,25 +182,29 @@
 					</div>
 				</div>
 				<div class="row news-posts">
-					<?php foreach ($news_posts as $value) :
+					<?php foreach ($news_posts as $post) :
+					setup_postdata($post);
+					$post_content = apply_filters('the_content', $post->post_content);
+					$post_title = apply_filters('the_title', $post->post_title);
 					mb_internal_encoding('utf-8'); 
-					$img = get_the_post_thumbnail_url($value->ID, 'product');
-					
+					$img = get_the_post_thumbnail_url($post->ID, 'product');
 					?>
 					
 					<div class="col-lg-3">
 						<div class="post-holder mb-3">
-							<a href="<?php echo get_permalink($value->ID); ?>">
+							<a href="<?php echo get_permalink($post->ID); ?>">
 							<div class="img-holder"><img src="<?php echo $img; ?>" alt="" class="img-responsive"></div>
 							<div class="text-holder">
-								<div class="date"><?php echo get_the_date($d='',$value->ID); ?></div>
-								<div class="post-header"><?php echo letters_limit($value->post_title, 26) ?></div>
-								<p><?php echo letters_limit($value->post_content, 120) ?></p>
+								<div class="date"><?php echo get_the_date($d='',$post->ID); ?></div>
+								<div class="post-header"><?php echo letters_limit($post_title, 26) ?></div>
+								<p><?php echo letters_limit($post_content, 120) ?></p>
 							</div>
 							</a>
 						</div>
 					</div>
-					<?php endforeach ?>
+					<?php 
+					wp_reset_postdata();
+					endforeach ?>
 					
 				</div>
 			</div>

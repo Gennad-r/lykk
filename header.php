@@ -9,7 +9,7 @@
 	<?php $nums = get_field('contacts', 'options')['phone_numbers']; ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 
 	<!-- Custom HTML -->
 	<header>
@@ -47,27 +47,7 @@
 								<li><a href="#"><span class="icon-insta"></span></a></li>
 								<?php 
 								// WP Globus menu building block --------
-								if (class_exists('WPGlobus')) :
-								global $wp;
-								$current_url = home_url( add_query_arg( array(), $wp->request ) );
-								$current_language = WPGlobus::Config()->language;
-								$lang_list = WPGlobus::Config()->enabled_languages;
-								$lang_names = WPGlobus::Config()->language_name;
-								
-								?>
-								<li class="menu-item-has-children"><a href="javascript:void(0);"><?php echo $lang_names[$current_language]; ?></a>
-									<ul class="sub-menu">
-									<?php if (count($lang_list)) :
-										foreach ($lang_list as $lang_code) : ?>
-									<li class="menu-item"> 
-									<a href="<?php echo WPGlobus_Utils::localize_url( $current_url, $lang_code ); ?>"><?php echo $lang_names[$lang_code]; ?></a>
-									</li>
-									<?php endforeach;
-									endif; ?>
-									</ul>
-								</li>
-								<?php endif; 
-								// WP Globus menu building block -------- ?>
+								echo lang_menu(); ?>
 							</ul>
 						</nav>
 					</div>

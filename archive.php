@@ -19,7 +19,7 @@
 
 					<div class="col-lg-4"> 
 						<a href="<?php echo get_the_permalink(); ?>" class="production-item"> 
-							<img src="<?php echo get_the_post_thumbnail_url($post->ID, 'product'); ?>" alt="<?php echo $post->post_title; ?>" class="img-responsive">
+							<img class="img-responsive" src="<?php echo get_the_post_thumbnail_url($post->ID, 'product'); ?>" alt="<?php echo $post->post_title; ?>" class="img-responsive">
 							<div class="production-item__inner"><span><?php echo $post->post_title; ?></span></div>
 						</a>
 					</div> <!-- production-item -->
