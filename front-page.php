@@ -60,7 +60,9 @@
 						//var_dump(get_term_link( $item->term_id, 'equipments' ));
 						//var_dump(get_field('img_eq', $item)); ?>
 					<div class="col-lg-4"> 
-						<a href="<?php echo get_term_link( $item->term_id, 'equipments' ) ?>" class="production-item"> 
+					<?php $link = get_field('custom_link', $item)?get_field('custom_link', $item):get_term_link( $item->term_id, 'equipments' );
+					?>
+						<a href="<?php echo $link; ?>" class="production-item"> 
 							<img src="<?php echo wp_get_attachment_image_url(get_field('img_eq', $item), 'product'); ?>" alt="<?php echo $item->name; ?>" class="img-responsive">
 							<div class="production-item__inner"><span><?php echo $item->name; ?></span></div>
 						</a>
