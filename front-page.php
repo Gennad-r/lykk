@@ -1,4 +1,6 @@
-<?php get_header(); ?>
+<?php get_header(); 
+$page_id = 2006;
+?>
 		<section class="about-company">
 			<div class="container">
 				<div class="row">
@@ -45,7 +47,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<h1>производимое оборудование</h1>
+						<h1>
+							<?php echo get_field('eq_title', $page_id) ?>
+						</h1>
 					</div>
 
 					<?php $args = array(
@@ -72,7 +76,7 @@
 					<div class="col-lg-4"> 
 						<a href="equipment-clear-dragon-2018.html" class="production-item"> 
 							<img src="<?php echo get_template_directory_uri(); ?>/app/img/product-img-06.jpg" alt="" class="img-responsive">
-							<div class="production-item__inner"><span>другое оборудование</span></div>
+							<div class="production-item__inner"><span><?php echo get_field('another_eq', $page_id) ?></span></div>
 						</a>
 					</div> <!-- production-item -->
 				</div>
@@ -85,7 +89,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<h1>Проектирование</h1>
+						<h1><?php echo get_field('pr_title', $page_id) ?></h1>
 					</div>
 				</div>
 			</div>
@@ -114,7 +118,7 @@
 								</div> <!-- text-block -->
 								<?php endforeach ?>
 								
-								<p class="text-right"><a href="/proektirovanie" class="btn">Подробнее</a></p>
+								<p class="text-right"><a href="/proektirovanie" class="btn"><?php echo get_field('more', $page_id) ?></a></p>
 							</div>
 						</div>
 					</div>
@@ -135,7 +139,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<h1>реализованные проекты</h1>
+						<h1><?php echo get_field('real_title', $page_id) ?></h1>
 					</div>
 				</div>
 				<div class="row project-posts">
@@ -149,7 +153,7 @@
 								<div class="post-header"><?php echo apply_filters('the_title', $post->post_title); ?></div>
 								<p><?php $post_content = apply_filters('the_content', $post->post_content); ?></p>
 								<?php echo letters_limit($post_content, 500); ?>
-								<p class="read-more text-right"><a href="<?php echo get_permalink($post->ID); ?>">читать больше...</a></p>
+								<p class="read-more text-right"><a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_field('more', $page_id) ?></a></p>
 							</div>
 						</div>
 						<?php 
@@ -161,7 +165,7 @@
 					<div class="col-12">
 						<p class="text-right">
 							<a href="/projects" class="btn">
-								Релизованные проекты
+							<?php echo get_field('real_title', $page_id) ?>
 							</a>
 						</p>
 					</div>
@@ -224,7 +228,7 @@
 						</div>
 					</div>
 					<div class="col-lg-8">
-						<?php echo do_shortcode('[contact-form-7 id="1880" title="Homepage contact form"]'); ?>
+						<?php echo do_shortcode(get_field('contact', $page_id)); ?>
 					</div>
 				</div>
 			</div>
