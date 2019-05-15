@@ -183,6 +183,16 @@ add_action( 'init', 'create_post_type' );
 
 function create_custom_taxes(){
 
+    register_taxonomy('project_types', array('projects'), array(
+        'label'                 => 'Виды объектов',
+        'labels'                => array(
+            'name'              => 'Виды объектов',
+            'singular_name'     => 'Вид',
+        ),
+        'description'           => 'Виды объектов',
+        'hierarchical'          => true,
+	) );
+	
     register_taxonomy('equipments', array('equipment'), array(
         'label'                 => 'Виды оборудования',
         'labels'                => array(
