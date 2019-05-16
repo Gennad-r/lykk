@@ -184,7 +184,7 @@ $page_id = 2006;
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<h1>новости</h1>
+						<h1><?php echo __('новости')?></h1>
 					</div>
 				</div>
 				<div class="row news-posts">
@@ -220,7 +220,7 @@ $page_id = 2006;
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<h1>контакты</h1>
+						<h1><?php echo __('контакты')?></h1>
 					</div>
 				</div>
 				<div class="row">
