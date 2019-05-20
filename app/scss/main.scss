@@ -785,6 +785,12 @@ form{
 
 		}
 	}
+	.input-group {
+		flex-direction: column;
+		&.al-c{
+			flex-direction: row
+		}
+	}
 }
 
 .publication-excerpt{
