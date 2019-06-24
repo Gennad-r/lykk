@@ -5,7 +5,7 @@
 			<div class="container">
 				<div class="row">
 					<nav class="prenav prenav-left">
-						<img src="img/logo-white.svg" alt="">
+					<img src="<?php echo get_template_directory_uri(); ?>/app/img/logo-white.svg" alt="" class="img-responsive">
 					</nav>
 					<nav class="prenav prenav-right">
 						<ul class="d-flex justify-content-end">

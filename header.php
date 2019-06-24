@@ -20,18 +20,14 @@
 					<div class="row">
 						<nav class="prenav prenav-left">
 							<div class="logo-holder">
-								<a href="<?php echo site_url(); ?>"><svg viewBox="0 0 117 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M52.988 20.24H41.036V0.368H34.304V26H52.988V20.24ZM70.5352 0.368H63.0472L57.7912 9.98L52.6432 0.368H45.0112L54.4432 16.316V26H61.1032V16.424L70.5352 0.368ZM91.9549 0.368H83.6749L75.1069 10.16V0.368H68.5549V26H75.1789V18.08L77.9149 15.236L84.8269 26H93.1429L82.4509 10.412L91.9549 0.368ZM115.038 0.368H106.758L98.1905 10.16V0.368H91.6385V26H98.2625V18.08L100.998 15.236L107.91 26H116.226L105.534 10.412L115.038 0.368Z" fill="#fff"/>
-									<circle cx="13" cy="13" r="13" fill="#fff"/>
-								</svg></a>
+								<a href="<?php echo site_url(); ?>">
+								<img src="<?php echo get_template_directory_uri(); ?>/app/img/logo-white.svg" alt="" class="img-responsive">
+								</a>
 							</div>
 						</nav>
 						<nav class="prenav prenav-right">
-							<div class="search-form icon-find">
-								<form role="search" method="get" id="searchform" >
-									<input type="text" value="" placeholder="Поиск" name="s" id="s">
-									<input type="submit" id="searchsubmit" value="">
-								</form>
+							<div class="search-form">
+							<?php get_search_form(); ?>
 							</div>
 							<ul class="d-flex justify-content-end">
 								<li class="menu-item-has-children"><a href="javascript:void(0);"><?php echo $nums[0]['number']; ?></a>
