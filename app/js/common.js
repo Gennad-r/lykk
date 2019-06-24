@@ -1,4 +1,9 @@
 jQuery(function () {
+	console.log(111);
+	jQuery('.hamburger').click(function (e) {
+		jQuery(this).toggleClass('is-active')
+	});
+
 	jQuery('.owl-carousel.pict-slider').owlCarousel({
 		'items': 1,
 		'loop': true,
@@ -14,6 +19,7 @@ jQuery(function () {
 
 
 });
+
 
 
 function tabs(tabs, blocs) {

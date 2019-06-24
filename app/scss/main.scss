@@ -50,6 +50,13 @@ a {
 	color: $accent;
 }
 
+.hamburger {
+	display: none;
+
+	@media screen and (max-width:1000px) {
+		display: block;
+	}
+}
 
 // dash lists
 ul.dash {
@@ -238,6 +245,12 @@ nav .menu-item-has-children {
 	}
 }
 
+.hamburger-logo-holder {
+	@media screen and (max-width:1000px) {
+		flex-direction: column;
+	}
+}
+
 .prenav {
 	padding: 0 15px;
 
@@ -270,10 +283,21 @@ nav .menu-item-has-children {
 .prenav {
 	align-items: center;
 
+	&-left {
+		@media screen and (max-width:1000px) {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
 	&-right {
 		margin-left: auto;
 		display: flex;
 		flex: 1 0 auto;
+
+		@media screen and (max-width: 1000px) {
+			flex-direction: column-reverse;
+		}
 
 		.menu-item-has-children {
 			position: relative;
@@ -321,6 +345,10 @@ nav .menu-item-has-children {
 	.search-form {
 		margin-right: 15px;
 
+		@media screen and (max-width: 1000px) {
+			margin: 0;
+			margin-bottom: 15px;
+		}
 	}
 
 	.logo-holder {
@@ -497,6 +525,12 @@ nav .menu-item-has-children {
 	color: #ccc;
 }
 
+.mob-nav-hide {
+	@media screen and (max-width: 1000px) {
+		display: none;
+	}
+}
+
 .search-form {
 	width: 100%;
 	max-width: 250px;
@@ -545,9 +579,12 @@ nav .menu-item-has-children {
 
 
 section {
-	margin-top: 2rem;
 	padding-top: 1rem;
-	border-top: 1px solid rgba($text, 0.5);
+
+	@media screen and (min-width:1001px) {
+		margin-top: 2rem;
+		border-top: 1px solid rgba($text, 0.5);
+	}
 
 	h1 {
 		margin-bottom: 3rem;
@@ -855,6 +892,10 @@ section {
 		border: 1px solid #E5E5E5;
 		transition: border 0.5s;
 
+		@media screen and (max-width:720px) {
+			flex-direction: column;
+		}
+
 		&:hover {
 			border: 1px solid $accent;
 
@@ -865,11 +906,19 @@ section {
 		padding: 10px;
 		flex: 0 0 270px;
 		margin-right: 15px;
+
+		@media screen and (max-width:720px) {
+			margin-right: 0;
+		}
 	}
 
 	.text-holder {
 		padding: 10px;
 		padding-left: 0;
+
+		@media screen and (max-width:720px) {
+			padding-left: 10px;
+		}
 
 		.date,
 		.post-header {

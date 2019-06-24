@@ -17,12 +17,17 @@
 		<div class="container-fluid bg-primary">
 			<div class="row">
 				<div class="container">
-					<div class="row">
+					<div class="row hamburger-logo-holder">
 						<nav class="prenav prenav-left">
 							<div class="logo-holder">
 								<a href="<?php echo site_url(); ?>">
 								<img src="<?php echo get_template_directory_uri(); ?>/app/img/logo-white.svg" alt="" class="img-responsive">
 								</a>
+							</div>
+							<div class="hamburger hamburger--spin">
+								<div class="hamburger-box">
+									<div class="hamburger-inner"></div>
+								</div>
 							</div>
 						</nav>
 						<nav class="prenav prenav-right">
@@ -50,7 +55,7 @@
 				</div>
 			</div>
 		</div> <!-- preheader-container end -->
-		<div class="container">
+		<div class="container mob-nav-hide">
 			<div class="main-header-section mt-3 d-flex">
 				<div class="navigation-main">
 						<?php 

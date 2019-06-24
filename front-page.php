@@ -149,7 +149,7 @@ $page_id = 2006;
 						<?php foreach ($real_projects as $key => $post) :
 						setup_postdata($post);	?>
 						<div class="post-holder mb-3">
-							<div class="img-holder"><img src="<?php echo get_the_post_thumbnail_url( $post, 'product' ); ?>" alt="<?php echo $project->post_title; ?>" class="img-responsive"></div>
+							<div class="img-holder"><img src="<?php echo get_the_post_thumbnail_url( $post, 'product' ); ?>" alt="" class="img-responsive"></div>
 							<div class="text-holder">
 								<div class="date"><?php echo get_post_time('d.m.Y', $post->ID); ?></div>
 								<div class="post-header"><?php echo apply_filters('the_title', $post->post_title); ?></div>
