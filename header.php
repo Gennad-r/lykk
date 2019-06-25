@@ -42,10 +42,10 @@
 										<?php endforeach ?>
 									</ul>
 								</li>
-								<li><a href="#"><span class="icon-fb"></span></a></li>
-								<li><a href="#"><span class="icon-phone"></span></a></li>
-								<li><a href="#"><span class="icon-skype"></span></a></li>
-								<li><a href="#"><span class="icon-insta"></span></a></li>
+								<!-- <li><a href="#"><span class="icon-fb"></span></a></li> -->
+								<!-- <li><a href="#"><span class="icon-phone"></span></a></li> -->
+								<li><a href="skype:search_back?chat"><span class="icon-skype"></span></a></li>
+								<!-- <li><a href="#"><span class="icon-insta"></span></a></li> -->
 								<?php 
 								// WP Globus menu building block --------
 								echo lang_menu(); ?>
@@ -56,13 +56,13 @@
 			</div>
 		</div> <!-- preheader-container end -->
 		<div class="container mob-nav-hide">
-			<div class="main-header-section mt-3 d-flex">
+			<div class="main-header-section">
 				<div class="navigation-main">
 						<?php 
 							wp_nav_menu( array( 
 								'theme_location' => 'menu-1',
 								'container' => 'nav',
-								'items_wrap' => '<ul class="%1$s d-flex">%3$s</ul>'
+								'items_wrap' => '<ul class="%1$s">%3$s</ul>'
 							 ) );
 						?>
 				</div>

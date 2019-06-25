@@ -282,7 +282,7 @@ function post_share_icons_small( $postid=false ) {
 			$current_language = WPGlobus::Config()->language;
 			$lang_list = WPGlobus::Config()->enabled_languages;
 			$lang_names = WPGlobus::Config()->language_name;
-			$html = '<li class="menu-item-has-children"><a href="javascript:void(0);">' . $lang_names[$current_language] . '</a>';
+			$html = '<li class="menu-item-has-children mob-section-hide"><a href="javascript:void(0);">' . $lang_names[$current_language] . '</a>';
 			$html .= '<ul class="sub-menu">';
 			if (count($lang_list)) {
 				foreach ($lang_list as $lang_code) {

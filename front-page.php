@@ -14,7 +14,7 @@ $page_id = 2006;
 				$slider = get_field('slider', 'options');
 				if (count($slider) > 0) :
 				?>
-				<div class="row">
+				<div class="row mob-section-hide">
 					<div class="col-12">
 						<div class="owl-carousel pict-slider">
 							<?php foreach ($slider as $slide) : ?>
@@ -31,7 +31,7 @@ $page_id = 2006;
 						<?php 
 						echo do_shortcode( '[directions_menu_code]' );
 						?>
-				<div class="row mt-3">
+				<div class="row mt-3 mob-section-hide">
 					<div class="col-12">
 					<?php 
 					
@@ -43,7 +43,7 @@ $page_id = 2006;
 
 			</div>
 		</section>
-		<section class="production">
+		<section class="production mob-section-hide">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -84,7 +84,7 @@ $page_id = 2006;
 				</div>
 			</div>
 		</section>
-		<section class="complex-solutions">
+		<section class="complex-solutions mob-section-hide">
 			<?php 
 			$solutions = get_field('complex_solutions', 'options');
 			?>
@@ -137,7 +137,7 @@ $page_id = 2006;
 		if ($real_projects) :
 		?>
 
-		<section class="finished-projects">
+		<section class="finished-projects mob-section-hide">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -180,7 +180,7 @@ $page_id = 2006;
 			$news_posts = get_posts(array('category' => 1, 'numberposts' => 4));
 			if (count($news_posts) >= 4) :
 		?>
-		<section class="news">
+		<section class="news mob-section-hide">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">

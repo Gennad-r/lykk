@@ -1,7 +1,7 @@
 jQuery(function () {
-	console.log(111);
 	jQuery('.hamburger').click(function (e) {
-		jQuery(this).toggleClass('is-active')
+		jQuery(this).toggleClass('is-active');
+		jQuery('.mob-nav-hide').toggleClass('show-menu');
 	});
 
 	jQuery('.owl-carousel.pict-slider').owlCarousel({

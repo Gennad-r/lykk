@@ -207,6 +207,12 @@ h3 {
 	font-size: 1.3rem;
 }
 
+.mob-section-hide {
+	@media screen and (max-width:1000px) {
+		display: none;
+	}
+}
+
 header {
 	a {
 		transition: opacity 0.5s;
@@ -226,23 +232,26 @@ header {
 }
 
 nav .menu-item-has-children {
-	&>a {
-		position: relative;
-		padding-right: 10px;
+	@media screen and (min-width:1001px) {
+		&>a {
+			position: relative;
+			padding-right: 10px;
 
-		&:after {
-			content: "";
-			position: absolute;
-			display: block;
-			right: 0;
-			top: 50%;
-			width: 0;
-			height: 0;
-			border-style: solid;
-			border-width: 4px 4px 0 4px;
-			border-color: #ccc transparent transparent transparent;
+			&:after {
+				content: "";
+				position: absolute;
+				display: block;
+				right: 0;
+				top: 50%;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 4px 4px 0 4px;
+				border-color: #ccc transparent transparent transparent;
+			}
 		}
 	}
+
 }
 
 .hamburger-logo-holder {
@@ -315,7 +324,7 @@ nav .menu-item-has-children {
 				a {
 					padding: 7px 5px;
 					color: #000;
-
+					white-space: nowrap;
 				}
 			}
 
@@ -370,7 +379,33 @@ nav .menu-item-has-children {
 	}
 }
 
+.main-header-section {
+	margin-top: 1rem;
 
+	.menu-main-menu {
+		display: flex;
+	}
+
+	@media screen and (max-width:1000px) {
+		position: absolute;
+		z-index: 9;
+		width: 100%;
+		left: auto;
+		top: 0;
+
+		margin-top: 0;
+		background-color: #fff;
+		align-items: stretch;
+		margin-left: -15px;
+		margin-right: -15px;
+		box-shadow: 0px 3px 10px #000;
+		padding: 15px 0;
+
+		.menu-main-menu {
+			flex-direction: column;
+		}
+	}
+}
 
 .navigation-main {
 	&>nav>ul>li {
@@ -378,6 +413,12 @@ nav .menu-item-has-children {
 	}
 
 	.menu-item-has-children {
+		@media screen and (max-width:1000px) {
+			ul {
+				display: none;
+			}
+		}
+
 		&:hover {
 			&>ul {
 				visibility: visible;
@@ -399,17 +440,31 @@ nav .menu-item-has-children {
 		position: relative;
 
 		ul {
-			visibility: hidden;
-			opacity: 0;
 			height: 0;
 			overflow: hidden;
 			transition: 0.5s;
-			position: absolute;
-			z-index: 99;
 			background-color: #fff;
 			flex-wrap: wrap;
 			left: 0;
 			padding: 15px;
+
+			@media screen and (min-width:1001px) {
+				opacity: 0;
+				visibility: hidden;
+				z-index: 99;
+				position: absolute;
+
+				&:after {
+					content: "";
+					height: calc(100% + 15px);
+					width: 200vw;
+					position: absolute;
+					z-index: -1;
+					top: 0;
+					left: -90vw;
+					background-color: #fff;
+				}
+			}
 
 			&>li {
 				border-left: 1px solid rgba($text, 0.5);
@@ -417,16 +472,6 @@ nav .menu-item-has-children {
 				padding-left: 10px;
 			}
 
-			&:after {
-				content: "";
-				height: calc(100% + 15px);
-				width: 200vw;
-				position: absolute;
-				z-index: -1;
-				top: 0;
-				left: -90vw;
-				background-color: #fff;
-			}
 		}
 
 		a {
@@ -435,29 +480,33 @@ nav .menu-item-has-children {
 		}
 
 		.menu-item-has-children {
-			&:hover a:after {
-				border-color: transparent transparent transparent $accent;
-			}
-
-			a:after {
-				border-width: 4px 0 4px 4px;
-				border-color: transparent transparent transparent #ccc;
-			}
-
-			ul {
-				top: 0;
-				left: 100%;
-				padding-top: 0;
-				background-color: #fff;
-
-				&:after {
-					display: none;
+			@media screen and (min-width:1001px) {
+				&:hover a:after {
+					border-color: transparent transparent transparent $accent;
 				}
 
-				li {
+				a:after {
+					border-width: 4px 0 4px 4px;
+					border-color: transparent transparent transparent #ccc;
+				}
+
+				ul {
+					top: 0;
+					left: 100%;
+					padding-top: 0;
 					background-color: #fff;
+
+					&:after {
+						display: none;
+					}
+
+					li {
+						background-color: #fff;
+					}
 				}
 			}
+
+
 		}
 	}
 
@@ -482,24 +531,33 @@ nav .menu-item-has-children {
 		}
 
 		a {
-			color: #000;
-			display: block;
-			padding: 0 7px;
-			position: relative;
-
-			&:hover {
-				text-decoration: underline;
-				color: $accent;
+			@media screen and (max-width:1000px) {
+				font-size: 1.2rem;
+				display: block;
+				padding: 0.5rem 15px;
+				text-transform: uppercase;
 			}
 
-			&:after {
-				content: "";
+			@media screen and (min-width:1001px) {
+				color: #000;
 				display: block;
-				position: absolute;
-				width: 1px;
-				top: 50%;
-				right: 0;
-				transform: translate(0.5px, -50%);
+				padding: 0 7px;
+				position: relative;
+
+				&:hover {
+					text-decoration: underline;
+					color: $accent;
+				}
+
+				&:after {
+					content: "";
+					display: block;
+					position: absolute;
+					width: 1px;
+					top: 50%;
+					right: 0;
+					transform: translate(0.5px, -50%);
+				}
 			}
 		}
 	}
@@ -528,6 +586,11 @@ nav .menu-item-has-children {
 .mob-nav-hide {
 	@media screen and (max-width: 1000px) {
 		display: none;
+
+		&.show-menu {
+			display: block;
+			position: relative;
+		}
 	}
 }
 
@@ -1105,6 +1168,11 @@ footer {
 		}
 	}
 
+	.prenav-right {
+		@media screen and (max-width:1000px) {
+			align-items: flex-end;
+		}
+	}
 
 	.prenav-left {
 		display: flex;
@@ -1153,6 +1221,12 @@ footer {
 	select {
 		color: #999;
 		font-weight: 200;
+	}
+}
+
+#vdz_cb_widget {
+	@media screen and (max-width:1000px) {
+		display: none;
 	}
 }
 
