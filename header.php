@@ -44,7 +44,7 @@
 								</li>
 								<!-- <li><a href="#"><span class="icon-fb"></span></a></li> -->
 								<!-- <li><a href="#"><span class="icon-phone"></span></a></li> -->
-								<li><a href="skype:search_back?chat"><span class="icon-skype"></span></a></li>
+								<li><a href="skype:info.lykk?chat"><span class="icon-skype"></span></a></li>
 								<!-- <li><a href="#"><span class="icon-insta"></span></a></li> -->
 								<?php 
 								// WP Globus menu building block --------

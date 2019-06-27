@@ -1172,6 +1172,15 @@ footer {
 		@media screen and (max-width:1000px) {
 			align-items: flex-end;
 		}
+
+		.menu-item-has-children {
+
+			.sub-menu {
+				top: auto;
+				bottom: 100%;
+			}
+		}
+
 	}
 
 	.prenav-left {

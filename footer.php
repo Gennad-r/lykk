@@ -20,7 +20,7 @@
 							</li>
 							<!-- <li><a href="#"><span class="icon-fb"></span></a></li> -->
 							<!-- <li><a href="#"><span class="icon-phone"></span></a></li> -->
-							<li><a href="skype:search_back?chat"><span class="icon-skype"></span></a></li>
+							<li><a href="skype:info.lykk?chat"><span class="icon-skype"></span></a></li>
 							<!-- <li><a href="#"><span class="icon-insta"></span></a></li> -->
 							<?php echo lang_menu(); ?>
 							</li>
@@ -33,9 +33,6 @@
 			<div class="row pt-2">
 				<div class="col-md-6">
 					<p>© 2019 LYKK Group | 2019</p>
-				</div>
-				<div class="col-md-2 offset-md-4 mob-section-hide">
-					<p>Cвяжитесь с нами наша сеть предложения о работе карта сайта юридическая база</p>
 				</div>
 			</div>
 		</div>
