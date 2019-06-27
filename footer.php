@@ -41,7 +41,7 @@
 	<div class="modal fade" id="check-request-modal">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
-				<?php echo do_shortcode('[contact-form-7 id="2403" title="Заявка на поверку счетчика ru"]'); ?>
+			<?php echo do_shortcode(get_field('check_form', 1889)); ?>
 			</div>
 		</div>
 	</div>
