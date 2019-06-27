@@ -23,7 +23,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<h1>новости</h1>
+						<h1><?php echo get_field('news_title', 2006) ?></h1>
 					</div>
 				</div>
 				<div class="row news-posts">
@@ -63,7 +63,7 @@
 	<div class="container mb-4">
 		<div class="row">
 			<div class="col-12">
-				<h2>Публикации и семинары</h2>
+				<h2><?php echo get_field('pub_title', $page_id) ?></h2>
 			</div>
 		</div>
 		<div class="row news-posts">
@@ -83,13 +83,13 @@
 <?php endif ?>
 
 <?php 
-	$sert_posts = get_posts(array('category' => 15, 'numberposts' => 4));
+	$sert_posts = get_posts(array('category' => 15));
 	if (count($sert_posts) >= 4) :
 ?>
 	<div class="container mb-4">
 		<div class="row">
 			<div class="col-12">
-				<h2>Лицензии, сертификаты</h2>
+				<h2><?php echo get_field('sert_title', $page_id) ?></h2>
 			</div>
 		<?php foreach ($sert_posts as $value) : 
 			$img = get_the_post_thumbnail_url($value->ID, 'certificate'); ?>
@@ -102,13 +102,13 @@
 
 
 <?php 
-	$partner_posts = get_posts(array('category' => 16, 'numberposts' => 4));
+	$partner_posts = get_posts(array('category' => 16));
 	if (count($partner_posts) >= 4) :
 ?>
 	<div class="container mb-4">
 		<div class="row">
 			<div class="col-12">
-				<h2>Партнеры</h2>
+				<h2><?php echo get_field('part_title', $page_id) ?></h2>
 			</div>
 		<?php foreach ($partner_posts as $value) : 
 			$img = get_the_post_thumbnail_url($value->ID, 'partner'); ?>
