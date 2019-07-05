@@ -296,3 +296,12 @@ function post_share_icons_small( $postid=false ) {
 			return $html;
 		}			
 	}
+
+	add_action('template_redirect', 'custom_redirect');
+
+function custom_redirect(){
+    if (is_page(2322)){
+        wp_redirect( '/equipment', 301 );
+        exit;
+    }
+}

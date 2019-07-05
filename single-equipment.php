@@ -38,7 +38,7 @@
 			<?php endforeach; ?>
 				</ul>
 				<p class="text-right">
-					<a class="btn" href="equipment-clear-dragon-2018.html">Задать вопрос менеджеру</a>
+					<a class="btn" href="/kontaktyi"><?php echo get_field('translations', 'options')['ask_manager'] ?></a>
 				</p>
 			</div>
 		<?php endif; ?>

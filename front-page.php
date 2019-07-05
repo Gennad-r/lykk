@@ -76,7 +76,7 @@ $page_id = 2006;
 
 					
 					<div class="col-lg-4"> 
-						<a href="equipment-clear-dragon-2018.html" class="production-item"> 
+						<a href="/proizvodimoe-oborudovanie" class="production-item"> 
 							<img src="<?php echo get_template_directory_uri(); ?>/app/img/product-img-06.jpg" alt="" class="img-responsive">
 							<div class="production-item__inner"><span><?php echo get_field('another_eq', $page_id) ?></span></div>
 						</a>

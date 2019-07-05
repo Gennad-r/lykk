@@ -28,7 +28,7 @@
 					endwhile;
 					 else : ?>
 					<div class="col-lg-12">
-						<h2 class="text-center mt-4 mb-4">Записей с такой категорией пока не существует.</h2>
+						<h2 class="text-center mt-4 mb-4"><?php echo get_field('translations', 'options')['no_exist'] ?></h2>
 					</div>
 					<?php
 

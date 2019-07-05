@@ -2,7 +2,7 @@
 <section>
 	<div class="container asd">
     <div class="row">
-        <h1 class="col">Результаты поиска по слову <?php echo esc_html( get_search_query() ) ?></h1>
+        <h1 class="col"><?php echo get_field('translations', 'options')['search_found'] . ': ' . esc_html( get_search_query() ) ?></h1>
     </div>
 		<?php while (have_posts()) :
 		the_post();

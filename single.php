@@ -15,14 +15,14 @@
 					</div>
 				</div>
 				<div class="col-md-8 content-area">
-					<p class="text-right"><?php the_date('j F Y', 'Опубликовано ', ' г.'); ?></p>
+					<p class="text-right"><?php the_date('j F Y', get_field('translations', 'options')['published'] . ' ', ' ' . get_field('translations', 'options')['year']); ?></p>
 					<?php the_content(); 
 					echo post_share_icons_small();
 					?>
 				</div>
 				<?php else : ?>
 				<div class="col-12 content-area">
-					<p class="text-right"><?php the_date('j F Y', 'Опубликовано ', ' г.'); ?></p>
+					<p class="text-right"><?php the_date('j F Y', get_field('translations', 'options')['published'] . ' ', ' ' . get_field('translations', 'options')['year']); ?></p>
 					<?php the_content(); 
 					echo post_share_icons_small();
 					?>

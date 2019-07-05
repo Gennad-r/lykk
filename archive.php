@@ -1,3 +1,10 @@
+<?php 
+$eq = get_post_type($post);
+if ($eq == 'equipment'){
+	wp_redirect( '/proizvodimoe-oborudovanie', 301 );
+	exit;
+}
+//var_dump($post);?>
 <?php get_header(); ?>
 		
 		<section class="production">
@@ -11,7 +18,6 @@
 					if (have_posts()) :
 
 					while (have_posts()) :
-                    //var_dump($post);
                     the_post(); 
                     ?>
 
@@ -28,7 +34,7 @@
 					endwhile;
 					 else : ?>
 					<div class="col-lg-12">
-						<h2 class="text-center mt-4 mb-4">Записей с такой категорией пока не существует.</h2>
+						<h2 class="text-center mt-4 mb-4"><?php echo get_field('translations', 'options')['no_exist'] ?></h2>
 					</div>
 					<?php
 
